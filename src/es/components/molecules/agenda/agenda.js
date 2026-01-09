@@ -16,10 +16,9 @@ export default class Agenda extends Shadow() {
     renderCSS() {
         this.css = /* css */`
         :host{
-            display: flex;
             width: var(--width-custom, 100%);
             background: var(--background-color-custom, grey);
-            gap: 2em;
+            gap: 2rem;
             padding: var(--padding-custom, 2rem);
             border-radius: var(--border-radius-custom, 1rem);
         }
@@ -44,7 +43,7 @@ export default class Agenda extends Shadow() {
         .top-left{
             display: flex;
             border-right: var(--left-border-right-color-custom, 2px solid black);
-            padding-right: 2vw;
+            padding-right: 2rem;
             flex-direction: column;
             justify-content: center;
             align-items: start;
@@ -63,40 +62,44 @@ export default class Agenda extends Shadow() {
             align-items: flex-end;
             height: 100%;
         }
-
         .sub-left{
             flex: 1;
             display: flex;
             justify-content: start;
             flex-direction: column;
         }
-
     @media only screen and (max-width: _max-width_){
-        .title{
-            font-size: var(--mobile-title-font-size, large);
+        :host{
+            flex-direction: column;
+        }
+        .top-left{
+            border-right: none;
+            border-bottom: var(--left-border-right-color-custom, 2px solid black);
+            padding-bottom: 2rem;
+            padding-right: 0;
+            align-items: center;
+        }
+        .top-right{
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .sub-right{
+            align-items: center;
+            gap: 2rem;
+        }
+        .sub-left{
+            gap: 1rem;
+        }
+        :host .title, :host .date-title, :host .text {
             text-align: center;
+            margin: 0;
         }
-        .image{
-            border-radius: var(--mobile-image-border-radius, 0.3em);
-        }
-
-        .teaser-container {
-            gap: var(--mobile-teaser-container-gap, 0.7em);
-
-        }
-        .row {
-            gap: var(--mobile-row-gap, 0.7em);
-            height: var(--mobile-row-height, 50vw);
-        }
-
-        .teaser-container {
-            gap: var(--mobile-teaser-container-gap, 0.7em);
-        }
-        .column-right {
-            gap: var(--mobile-column-right-gap, 0.7em);
+        :host a-picture{
+            aspect-ratio: 1/1;
+           
         }
     }
-        
+   
    `
         return this.fetchTemplate()
     }

@@ -9,6 +9,8 @@
 
 :host a-picture {
     --picture-cover-border-radius:  1rem;
+    --picture-cover-border-radius-mobile:  1rem;
+    --picture-cover-img-max-height-mobile: none;
     --picture-cover-img-max-height: 30vw;
     --picture-cover-aspect-ratio: 2/1;
     --picture-cover-img-object-position: center;
