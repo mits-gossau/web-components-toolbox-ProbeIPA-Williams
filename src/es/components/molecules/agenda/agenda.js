@@ -30,7 +30,7 @@ export default class Agenda extends Shadow() {
         .date{
             font-size: var(--date-font-size-custom, 1.5rem);
         }
-        .title{
+        :host.title{
             font-size: var(--title-font-size-custom, 1.7rem);
             color: var(--title-color-custom, black);
             margin: 0;
@@ -49,12 +49,14 @@ export default class Agenda extends Shadow() {
             align-items: start;
         }
         .top-right{
+            width: 100%;
             display: flex;
             flex-direction: row;
-            gap: 1rem;
+            gap: 2rem;
         }
         .sub-right{
-            flex: 0.7;
+            width: 100%;
+            flex: 0.5;
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -62,8 +64,17 @@ export default class Agenda extends Shadow() {
             align-items: flex-end;
             height: 100%;
         }
+        .sub-right > img{
+            height: 100%;
+            aspect-ratio: 2/1;
+            object-fit: cover;
+            border-radius: var(--image-border-radius-custom, 1rem);
+            width: 100%;
+         
+        }
         .sub-left{
             flex: 1;
+            width: 100%;
             display: flex;
             justify-content: start;
             flex-direction: column;
@@ -94,7 +105,8 @@ export default class Agenda extends Shadow() {
             text-align: center;
             margin: 0;
         }
-        :host a-picture{
+        .sub-right > img{
+            width: 100%;
             aspect-ratio: 1/1;
            
         }
