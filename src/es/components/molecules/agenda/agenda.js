@@ -79,7 +79,8 @@ export default class Agenda extends Shadow() {
             justify-content: start;
             flex-direction: column;
         }
-    @media only screen and (max-width: _max-width_) and (min-width: 768px) {
+        
+    @media only screen and (max-width: 1024px) {
         :host{
             flex-direction: column;
         }
